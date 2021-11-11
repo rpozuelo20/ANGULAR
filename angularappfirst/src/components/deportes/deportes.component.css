@@ -1,0 +1,9 @@
+.estilopar {
+  font-weight: bold;
+}
+
+.estiloimpar {
+  background-color: white;
+  color: rgb(255, 0, 34);
+  font-weight: bold;
+}

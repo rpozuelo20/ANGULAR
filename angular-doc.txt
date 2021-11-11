@@ -1,0 +1,10 @@
+En nuevos PC instalar lo siguiente:
+    -npm install -g @angular/cli@latest
+
+Comando para crear proyectos Angular y arrancarlos:
+    -ng new (no añadir Angular routing y CSS)
+    -ng serve
+
+Los componentes finalizan con la extension ts.
+
+Debemos de tener una carpeta components que almacenara nuestros componentes.

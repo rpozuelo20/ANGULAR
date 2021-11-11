@@ -1,0 +1,41 @@
+<div class="ctn-form">
+  <div class="child-form">
+    <h1>Formulario</h1>
+    <h2>{{ mensaje }}</h2>
+    <!-- Debemos dar al form un id angular e indicar que es de tipo ngForm de angular -->
+    <!-- #userForm seria el id angular y ngForm la tecnologia que vamos a utilizar -->
+    <form #userForm="ngForm" (ngSubmit)="recibirFormulario()">
+      <label>Nombre: </label>
+      <input
+        required
+        type="text"
+        name="cajanombre"
+        #cajanombre="ngModel"
+        [(ngModel)]="user.nombre"
+      /><label *ngIf="!cajanombre.valid && cajanombre.touched"
+        >El nombre es obligatorio.</label
+      >
+      <br />
+      <label>Apellido: </label>
+      <input
+        pattern="[A-Z]{1}[a-z]{2}"
+        type="text"
+        name="cajaapellidos"
+        #cajaapellidos="ngModel"
+        [(ngModel)]="user.apellidos"
+      />
+      <br />
+      <label>Edad: </label>
+      <input
+        type="number"
+        name="cajaedad"
+        #cajaedad="ngModel"
+        [(ngModel)]="user.edad"
+      />
+      <br />
+      <button [disabled]="!userForm.valid">Enviar datos</button>
+    </form>
+    <hr />
+    <h2>{{ user.nombre }}, {{ user.apellidos }}, {{ user.edad }}</h2>
+  </div>
+</div>

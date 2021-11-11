@@ -1,0 +1,17 @@
+<div style="text-align: left">
+  <h1>Formulario por referencia parecido a React</h1>
+  <div>
+    <form #sumarForm="ngForm">
+      <div>
+        <label>Numero 1: </label>
+        <input type="number" name="cajanumero1" #cajanumero1 />
+      </div>
+      <div>
+        <label>Numero 2: </label>
+        <input type="number" name="cajanumero2" #cajanumero2 />
+      </div>
+      <button (click)="sumarNumeros()">Sumar numeros</button>
+    </form>
+  </div>
+  <h2>La suma es {{ suma }}</h2>
+</div>

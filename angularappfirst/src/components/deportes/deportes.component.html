@@ -1,0 +1,55 @@
+<div
+  style="
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.4), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 5px 50px;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(255, 11, 105), rgb(196, 0, 59));
+  "
+>
+  <h1>Ejemplo directivas Angular</h1>
+
+  <h2>Estilos con ngStyle</h2>
+  <ul>
+    <li
+      *ngFor="let num of numbers"
+      [class.estilopar]="num % 2 == 0"
+      [class.estiloimpar]="num % 2 == 1"
+    >
+      {{ num }}
+    </li>
+    <li
+      *ngFor="let num of numbers"
+      [ngClass]="{
+        estilopar: num % 2 == 1,
+        estiloimpar: num % 2 == 0
+      }"
+    >
+      {{ num }}
+    </li>
+  </ul>
+
+  <h2>Numero de deportes {{ sports.length }}</h2>
+
+  <!-- Directiva If y else -->
+  <div *ngIf="sports.length < 7; then condiciontrue; else condicionelse"></div>
+  <ng-template #condiciontrue>
+    <div>
+      <p>Tienes menos de 7 deportes</p>
+    </div>
+  </ng-template>
+  <ng-template #condicionelse>
+    <div>
+      <p>Tienes mas de 7 deportes</p>
+    </div>
+  </ng-template>
+
+  <h4>El primer deporte es {{ sports[0] }}</h4>
+
+  <!-- Bucle para mostrar todos los deportes en una lista -->
+  <ul style="text-align: left">
+    <li *ngFor="let sport of sports; let i = index">
+      Posicion: {{ i }}, Deporte: {{ sport }}
+    </li>
+  </ul>
+</div>
