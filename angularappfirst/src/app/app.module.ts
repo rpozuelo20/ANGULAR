@@ -10,6 +10,7 @@ import { Deportes } from 'src/components/deportes/deportes.component';
 import { FormularioBindingModel } from 'src/components/formulariobindingmodel/formulariobindingmodel.component';
 import { FormularioReferencia } from 'src/components/formularioreferencia/formularioreferencia.component';
 import { Multiplicar } from 'src/components/multiplicar/multiplicar.component';
+import { PruebaComponent } from './components/prueba/prueba.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { Multiplicar } from 'src/components/multiplicar/multiplicar.component';
     FormularioBindingModel,
     FormularioReferencia,
     Multiplicar,
+    PruebaComponent,
   ],
   // nota: importamos FormsModule
   imports: [BrowserModule, FormsModule],

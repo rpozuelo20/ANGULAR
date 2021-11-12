@@ -8,3 +8,24 @@ Comando para crear proyectos Angular y arrancarlos:
 Los componentes finalizan con la extension ts.
 
 Debemos de tener una carpeta components que almacenara nuestros componentes.
+
+Con el comando "ng g component components/nombredelcomponente" generariamos un componente ya con sus .ts, .html y .css y archivos necesarios, lo unico es que nos lo crea dentro de App, por lo que desde ahora nuestros componentes estaran alojados alli.
+
+
+--Rutas en Angular-- Tocamos los archivos app.module.ts, app.component.html y app.routing.ts
+-
+1.-Creamos un documento app.routing.ts en la carpeta app.
+2.-Importamos la siguiente sentencia:
+    import { Routes, RouterModule } from "@angular/router";
+    import { ModuleWithProviders } from "@angular/core";
+3.-Importamos los componentes que vayamos a navegar.
+4.-Creamos  appRoutes Routes.
+-Para mas info mirar el archivo app.routing.js alojado en el proyecto rutasangular.
+-
+PARA IMPORTAR app.routing.ts en app.module.ts:
+    import { routing, appRoutingProviders } from './app.routing';
+-
+nota: dentro de @NgModule imports y providers debemos de escribir routing y appRoutingProviders
+La etiqueta para llamar al router es <router-outlet></router-outlet>, debemos de ponerla en app.component.html
+-
+Para ver como se crea en menu o navbar o links, ver el archivo menu.component.html

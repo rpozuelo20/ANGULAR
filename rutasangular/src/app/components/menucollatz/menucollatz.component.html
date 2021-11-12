@@ -1,0 +1,17 @@
+<div>
+  <h2>Menu Collatz</h2>
+  <div>
+    <a [routerLink]="['/menucollatz', num]" *ngFor="let num of numeros">
+      {{ num }}
+    </a>
+  </div>
+  <div *ngIf="numero">
+    <p>El numero es {{ numero }}.</p>
+    <ul>
+      <li *ngFor="let num of collatz">{{ num }}</li>
+    </ul>
+  </div>
+  <div *ngIf="!numero">
+    <p>Escoja un numero del menu</p>
+  </div>
+</div>
