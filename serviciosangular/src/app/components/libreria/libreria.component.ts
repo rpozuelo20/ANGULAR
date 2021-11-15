@@ -15,16 +15,8 @@ export class LibreriaComponent implements OnInit {
   @ViewChild('comicnom') comicnom: ElementRef;
   @ViewChild('comicimg') comicimg: ElementRef;
   @ViewChild('comicdet') comicdet: ElementRef;
-  public comic!: object;
 
-  agregarComic(): void {
-    var comic = {
-      nombre: this.comicnom,
-      imagen: this.comicimg,
-      detalles: this.comicdet,
-    };
-    this.comics.push(comic);
-  }
+  agregarComic(): void {}
 
   comicFavoritoPadre(event: string): void {
     this.comicFavorito = 'El comic favorito es ' + event;
