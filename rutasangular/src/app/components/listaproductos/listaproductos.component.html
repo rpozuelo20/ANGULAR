@@ -1,0 +1,8 @@
+<div>
+  <h1>Lista Productos</h1>
+  <p>El componente <i>-listaproductos-</i> funciona correctamente.</p>
+  <div *ngFor="let producto of productos">
+    <h2>{{ producto.nombre }}, {{ producto.precio }}$.</h2>
+    <img src="{{ producto.imagen }}" />
+  </div>
+</div>

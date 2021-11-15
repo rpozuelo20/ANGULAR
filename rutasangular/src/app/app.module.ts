@@ -13,6 +13,9 @@ import { MenuComponent } from './components/menu/menu.component';
 import { Error404Component } from './components/error404/error404.component';
 import { NumerodobleComponent } from './components/numerodoble/numerodoble.component';
 import { MenucollatzComponent } from './components/menucollatz/menucollatz.component';
+import { ListaproductosComponent } from './components/listaproductos/listaproductos.component';
+import { CocheComponent } from './components/coche/coche.component';
+import { ConcesionarioComponent } from './components/concesionario/concesionario.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { MenucollatzComponent } from './components/menucollatz/menucollatz.compo
     Error404Component,
     NumerodobleComponent,
     MenucollatzComponent,
+    ListaproductosComponent,
+    CocheComponent,
+    ConcesionarioComponent,
   ],
   // nota: dentro de @NgModule imports y providers debemos de escribir routing y appRoutingProviders
   imports: [BrowserModule, routing],

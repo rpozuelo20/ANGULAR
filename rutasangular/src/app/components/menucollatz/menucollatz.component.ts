@@ -13,14 +13,17 @@ export class MenucollatzComponent implements OnInit {
   public collatz!: Array<number>;
 
   constructor(private _activeRoute: ActivatedRoute) {
+    // nota: desde aqui estamos creando estos componentes numeros y collatz
     this.numeros = new Array<number>();
     this.collatz = new Array<number>();
   }
 
   generarCollatz(): void {
+    // nota: el metodo generarCollatz nos hace un bucle
     for (var i = 1; i <= 10; i++) {
-      var aleatorio = 33;
-      this.numeros.push(i * aleatorio);
+      var aleatorio = Math.floor(Math.random() * 100) + 1;
+      // nota: con push estamos diciendo que vamos a enviar cada vez que el bucle se realice, los datos de aleatorio a numeros, por lo que el array de numeros contendra 10 numeros aleatorios
+      this.numeros.push(aleatorio);
     }
   }
 
