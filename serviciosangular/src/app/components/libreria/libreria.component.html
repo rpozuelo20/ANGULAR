@@ -1,0 +1,34 @@
+<div style="text-align: center">
+  <h2>Bienvenido al componente Libreria</h2>
+  <hr />
+  <h3 *ngIf="comicFavorito">{{ comicFavorito }}</h3>
+  <h3 *ngIf="!comicFavorito">Seleccione un comic como favorito</h3>
+  <hr />
+  <div>
+    <!-- PARA QUE EL FORMULARIO FUNCIONE CON NORMALIDAD ES OBLIGATORIO IMPORTAR FormsModule EN app.module.ts -->
+    <form #comicForm="ngForm" (ngSubmit)="agregarComic()">
+      <div>
+        <label>Nombre: </label>
+        <input type="text" name="comicnom" #comicnom />
+      </div>
+      <div>
+        <label>Imagen: </label>
+        <input type="text" name="comicimg" #comicimg />
+      </div>
+      <div>
+        <label>Detalles: </label>
+        <input type="text" name="comicdet" #comicdet />
+      </div>
+      <button>Agregar comic</button>
+    </form>
+  </div>
+  <hr />
+  <div *ngFor="let comic of comics">
+    <!-- nota: es importante poner dentro de la etiqueta hijo el atributo [datohijo]="datopadre", de otra manera no nos mostrara mas que errores -->
+    <app-comic
+      [comichijo]="comic"
+      (comicFavoritoPadre)="comicFavoritoPadre($event)"
+    ></app-comic>
+    <hr />
+  </div>
+</div>

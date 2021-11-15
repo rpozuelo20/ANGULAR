@@ -1,0 +1,10 @@
+ul li {
+  display: inline;
+  padding: 10px;
+  margin: 0px 10px;
+  background-color: black;
+}
+ul li a {
+  color: white;
+  text-decoration: none;
+}
