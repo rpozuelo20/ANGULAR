@@ -1,7 +1,11 @@
 <div style="text-align: center">
   <h2>Bienvenido al componente Libreria</h2>
   <hr />
-  <h3 *ngIf="comicFavorito">{{ comicFavorito }}</h3>
+  <div class="comicFav" *ngIf="comicFavorito">
+    <h3>{{ comicFavorito.nombre }}</h3>
+    <img src="{{ comicFavorito.imagen }}" />
+    <p>{{ comicFavorito.detalles }}</p>
+  </div>
   <h3 *ngIf="!comicFavorito">Seleccione un comic como favorito</h3>
   <hr />
   <div>
@@ -23,11 +27,14 @@
     </form>
   </div>
   <hr />
-  <div *ngFor="let comic of comics">
+  <div *ngFor="let comic of comics; let i = index">
     <!-- nota: es importante poner dentro de la etiqueta hijo el atributo [datohijo]="datopadre", de otra manera no nos mostrara mas que errores -->
     <app-comic
+      [index]="i"
+      (eliminarComicPadre)="eliminarComicPadre($event)"
       [comichijo]="comic"
       (comicFavoritoPadre)="comicFavoritoPadre($event)"
+      (modificarComicPadre)="modificarComicPadre($event)"
     ></app-comic>
     <hr />
   </div>

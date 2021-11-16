@@ -10,22 +10,37 @@ import { Comic } from 'src/app/models/comic';
 export class LibreriaComponent implements OnInit {
   // nota: creamos un elemento comics que va a ser un array que trabajaremos sobre la plantilla del modelo Comic
   public comics: Array<Comic>;
-  public comicFavorito!: string;
+  public comicFavorito!: Comic;
 
-  @ViewChild('comicnom') comicnom: ElementRef;
-  @ViewChild('comicimg') comicimg: ElementRef;
-  @ViewChild('comicdet') comicdet: ElementRef;
+  // nota: para poder agregar objetos, primero creamos las 3 referencias que recuperaran el valor del formulario
+  @ViewChild('comicnom') comicnom!: ElementRef;
+  @ViewChild('comicimg') comicimg!: ElementRef;
+  @ViewChild('comicdet') comicdet!: ElementRef;
+  // nota: en agregarComic creamos variables para los distintos valores, un objeto newcomic que sera un new Comic con los valores y realizaremos un push
+  agregarComic(): void {
+    var nombre = this.comicnom.nativeElement.value;
+    var imagen = this.comicimg.nativeElement.value;
+    var detalles = this.comicdet.nativeElement.value;
+    var newcomic = new Comic(nombre, imagen, detalles);
+    this.comics.push(newcomic);
+  }
 
-  agregarComic(): void {}
+  modificarComicPadre(event: number): void {
+    var nombre = this.comicnom.nativeElement.value;
+    var imagen = this.comicimg.nativeElement.value;
+    var detalles = this.comicdet.nativeElement.value;
+    this.comics[event] = new Comic(nombre, imagen, detalles);
+  }
 
-  comicFavoritoPadre(event: string): void {
-    this.comicFavorito = 'El comic favorito es ' + event;
+  eliminarComicPadre(event: number): void {
+    this.comics.splice(event, 1);
+  }
+
+  comicFavoritoPadre(event: Comic): void {
+    this.comicFavorito = event;
   }
 
   constructor() {
-    this.comicnom = new ElementRef('');
-    this.comicimg = new ElementRef('');
-    this.comicdet = new ElementRef('');
     // nota: realizamos el constructor de comics, alojamos los comics que se dispondra comics al iniciar la pagina
     this.comics = [
       new Comic(

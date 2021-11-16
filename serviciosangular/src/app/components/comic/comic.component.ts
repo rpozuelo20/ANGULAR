@@ -11,12 +11,21 @@ import { Comic } from 'src/app/models/comic';
 export class ComicComponent implements OnInit {
   @Input() comichijo!: Comic; // nota: realizamos la creacion de comic, sera la manera de la data alojada en el modelo
   @Output() comicFavoritoPadre: EventEmitter<any> = new EventEmitter(); // nota: con la sentencia de @Output se podria decir que estamos haciendo una referencia a la funcion del padre para el hijo
+  @Input() index!: number;
+  @Output() eliminarComicPadre: EventEmitter<any> = new EventEmitter();
+  @Output() modificarComicPadre: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   // nota: el siguiente metodo envia desde el hijo al padre el dato nombre del comic hijo que pulsemos su boton
   comicFavoritoHijo(): void {
-    this.comicFavoritoPadre.emit(this.comichijo.nombre);
+    this.comicFavoritoPadre.emit(this.comichijo);
+  }
+  eliminarComicHijo(): void {
+    this.eliminarComicPadre.emit(this.index);
+  }
+  modificarComicHijo(): void {
+    this.modificarComicPadre.emit(this.index);
   }
 
   ngOnInit(): void {}
