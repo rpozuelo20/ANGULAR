@@ -1,0 +1,25 @@
+<div class="container pt-5">
+  <h1>Buscar Empleados Oficio</h1>
+  <form #formEmpleadosOficio="ngForm" class="w-50">
+    <label>Salario: </label>
+    <select class="form-control" name="selectoficios" #selectoficios>
+      <option *ngFor="let ofi of oficios">
+        {{ ofi }}
+      </option>
+    </select>
+  </form>
+  <table *ngIf="empleados" class="table table-light">
+    <thead>
+      <tr>
+        <th>Apellido</th>
+        <th>Oficio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empleados">
+        <td>{{ emp.apellido }}</td>
+        <td>{{ emp.oficio }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

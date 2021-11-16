@@ -1,0 +1,16 @@
+<div class="container pt-5">
+  <h1>Comics Inyeccion</h1>
+  <div class="d-flex flex-wrap justify-content-center">
+    <div style="width: 250px" class="card me-1" *ngFor="let comic of comics">
+      <img
+        style="height: 300px"
+        src="{{ comic.imagen }}"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h3>{{ comic.nombre }}</h3>
+        <p>{{ comic.detalles }}</p>
+      </div>
+    </div>
+  </div>
+</div>

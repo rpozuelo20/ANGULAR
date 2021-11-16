@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngFor="let persona of personas" class="list-group">
+    <li class="list-group-item active">
+      {{ persona.Nombre }}, {{ persona.Edad }}
+    </li>
+    <li class="list-group-item">{{ persona.Email }}</li>
+  </div>
+</div>
