@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Welcome to the insertardepartamento component</h1>
+  <!-- nota: para poder usar formularios tenemos que haber importado el modulo de formularios en app.module.ts -->
+  <form #formDepartamento="ngForm">
+    <label>Numero: </label>
+    <input
+      type="number"
+      name="cajanumero"
+      #cajanumero
+      class="form-control"
+      required
+    />
+    <label>Nombre: </label>
+    <input
+      type="text"
+      name="cajanombre"
+      #cajanombre
+      class="form-control"
+      required
+    />
+    <label>Localidad: </label>
+    <input
+      type="text"
+      name="cajalocalidad"
+      #cajalocalidad
+      class="form-control"
+      required
+    />
+    <hr />
+    <button (click)="insertarDepartamento()" class="btn btn-primary">
+      Insertar departamento
+    </button>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Welcome to the editardepartamento component</h1>
+  <!-- nota: para poder usar formularios tenemos que haber importado el modulo de formularios en app.module.ts -->
+  <form #formDepartamento="ngForm">
+    <label>Numero: </label>
+    <input
+      type="number"
+      name="cajanumero"
+      #cajanumero
+      class="form-control"
+      required
+      disabled
+      value="{{ departamento.numero }}"
+    />
+    <label>Nombre: </label>
+    <input
+      type="text"
+      name="cajanombre"
+      #cajanombre
+      class="form-control"
+      required
+      value="{{ departamento.nombre }}"
+    />
+    <label>Localidad: </label>
+    <input
+      type="text"
+      name="cajalocalidad"
+      #cajalocalidad
+      class="form-control"
+      required
+      value="{{ departamento.localidad }}"
+    />
+    <hr />
+    <button (click)="updateDepartamento()" class="btn btn-primary">
+      Editar departamento
+    </button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Welcome to the departamentos component</h1>
+  <a class="btn btn-primary" [routerLink]="['/insertardepartamento']"
+    >¿Desea insertar un nuevo departamento?</a
+  >
+  <hr />
+  <table class="table table-borderless table-dark shadow">
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Departamento</th>
+        <th>Localidad</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dep of departamentos">
+        <td class="bg-light border text-dark">{{ dep.numero }}</td>
+        <td class="bg-light border text-dark">{{ dep.nombre }}</td>
+        <td class="bg-light border text-dark">{{ dep.localidad }}</td>
+        <td class="bg-light border text-dark text-center">
+          <a
+            class="btn btn-warning ms-1 me-1"
+            [routerLink]="['/editar', dep.numero, dep.nombre, dep.localidad]"
+            >Editar</a
+          >
+          <button
+            class="btn btn-danger ms-1 me-1"
+            (click)="eliminarDepartamento(dep.numero)"
+          >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
