@@ -17,6 +17,9 @@ import { EmpleadosService } from './services/empleados.service';
 import { EmpleadosapiComponent } from './components/empleadosapi/empleadosapi.component';
 import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
 import { Empleados2Service } from './services/empleados2.service';
+import { ListadoempleadosComponent } from './components/listadoempleados/listadoempleados.component';
+import { DetalleempleadosComponent } from './components/detalleempleados/detalleempleados.component';
+import { ServiceEmpleados } from './services/empleado.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,8 @@ import { Empleados2Service } from './services/empleados2.service';
     PersonasapiComponent,
     EmpleadosapiComponent,
     EmpleadosoficioComponent,
+    ListadoempleadosComponent,
+    DetalleempleadosComponent,
   ],
   imports: [
     HttpClientModule, // nota: necesario importarlo para realizar llamadas?
@@ -41,6 +46,7 @@ import { Empleados2Service } from './services/empleados2.service';
     ComicsService,
     Empleados2Service,
     EmpleadosService,
+    ServiceEmpleados,
     PersonasService, // nota: necesario importar los servicios
   ],
   bootstrap: [AppComponent],

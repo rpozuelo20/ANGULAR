@@ -1,13 +1,14 @@
 <div class="container pt-5">
   <h1>Buscar Empleados Oficio</h1>
   <form #formEmpleadosOficio="ngForm" class="w-50">
-    <label>Salario: </label>
+    <label>Oficio: </label>
     <select
       class="form-control"
       name="selectoficios"
       #selectoficios
       (change)="mostrarEmpleados()"
     >
+      <option disabled selected value="null">-selecciona un oficio-</option>
       <option *ngFor="let ofi of oficios">
         {{ ofi }}
       </option>
