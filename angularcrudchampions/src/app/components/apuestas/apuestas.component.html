@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Apuestas</h1>
+  <a class="btn btn-success w-100 mb-2" [routerLink]="['/insertarapuesta']"
+    >Insertar apuesta</a
+  >
+  <table *ngIf="apuestas" class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Resultado</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let apuesta of apuestas">
+        <td>{{ apuesta.usuario }}</td>
+        <td>{{ apuesta.resultado }}</td>
+        <td>{{ apuesta.fecha }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

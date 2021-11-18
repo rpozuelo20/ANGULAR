@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Insertar apuesta</h1>
+  <form #apuestaForm="ngForm">
+    <label>Usuario: </label>
+    <input type="text" name="cajausuario" #cajausuario class="form-control" />
+    <label>Resultado: </label>
+    <input
+      type="text"
+      name="cajaresultado"
+      #cajaresultado
+      class="form-control"
+    />
+    <label>Fecha: </label>
+    <input type="text" name="cajafecha" #cajafecha class="form-control" />
+    <br />
+    <button class="btn btn-success" (click)="postApuesta()">
+      Insertar apuesta
+    </button>
+  </form>
+</div>

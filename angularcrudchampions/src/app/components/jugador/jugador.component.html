@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="container p-0 text-center border rounded shadow" *ngIf="jugador">
+    <h1 class="bg-dark text-light">{{ jugador.nombre }}</h1>
+    <img src="{{ jugador.imagen }}" alt="" />
+    <hr />
+    <h3>{{ jugador.posicion }}</h3>
+    <p>{{ jugador.fechaNacimiento }}</p>
+    <p>{{ jugador.pais }}</p>
+    <a
+      class="btn btn-danger mb-2"
+      [routerLink]="['/jugadores', jugador.idEquipo]"
+      >Jugadores</a
+    >
+  </div>
+</div>

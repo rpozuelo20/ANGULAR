@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Jugadores</h1>
+  <table *ngIf="jugadores" class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Jugador</th>
+        <th>Imagen</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let jugador of jugadores">
+        <td>{{ jugador.nombre }}</td>
+        <td>
+          <img
+            src="{{ jugador.imagen }}"
+            alt=""
+            class="container"
+            style="height: 175px; width: 150px"
+          />
+        </td>
+        <td>
+          <a
+            class="btn btn-danger"
+            [routerLink]="['/jugador', jugador.idJugador]"
+            >Detalles</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
