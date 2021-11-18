@@ -47,4 +47,10 @@ export class ServiceDepartamentos {
     // nota: en el return nos devuelve los objetos contenidos en la url
     return this._http.get(url);
   }
+
+  getReactGramPosts(): Observable<any> {
+    var request = '/.json';
+    var url = Global.urlapireactgrams + request;
+    return this._http.get(url);
+  }
 }

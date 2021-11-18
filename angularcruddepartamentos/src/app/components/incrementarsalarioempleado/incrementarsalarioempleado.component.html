@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Welcome to the incrementarsalarioempleado component</h1>
+  <form #incrementarForm="ngForm">
+    <label>Incremento salarial: </label>
+    <input
+      type="number"
+      name="cajaincremento"
+      #cajaincremento
+      class="form-control"
+    />
+    <br />
+    <button class="btn btn-success" (click)="incrementarSalario()">
+      Incrementar salario
+    </button>
+  </form>
+  <hr />
+  <!-- ERROR TypeError: ctx.empleado is undefined -->
+  <!-- IMPORTANTE, AL SER METODOS CON PROMESAS DEBEMOS DE DECIRLE QUE *ngIf="empleado" SI EXISTE EMPLEADO ENTONCES ME PUEDES PINTAR EL DIV, EN CASO CONTARIO NO -->
+  <div *ngIf="empleado">
+    <h2>{{ empleado.apellido }}</h2>
+    <h2>{{ empleado.salario }}$</h2>
+    <h2>{{ empleado.oficio }}</h2>
+  </div>
+</div>

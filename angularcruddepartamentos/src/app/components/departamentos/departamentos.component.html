@@ -20,16 +20,19 @@
         <td class="bg-light border text-dark">{{ dep.localidad }}</td>
         <td class="bg-light border text-dark text-center">
           <a
-            class="btn btn-warning ms-1 me-1"
+            class="btn btn-warning m-1"
             [routerLink]="['/editar', dep.numero, dep.nombre, dep.localidad]"
             >Editar</a
           >
           <button
-            class="btn btn-danger ms-1 me-1"
+            class="btn btn-danger m-1"
             (click)="eliminarDepartamento(dep.numero)"
           >
             Eliminar
           </button>
+          <a class="btn btn-primary" [routerLink]="['/empleados', dep.numero]"
+            >Empleados</a
+          >
         </td>
       </tr>
     </tbody>

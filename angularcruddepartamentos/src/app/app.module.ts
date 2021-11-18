@@ -15,6 +15,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ServiceDepartamentos } from './services/departamento.service';
 import { InsertardepartamentoComponent } from './components/insertardepartamento/insertardepartamento.component';
 import { EditardepartamentoComponent } from './components/editardepartamento/editardepartamento.component';
+import { ServiceEmpleados } from './services/empleado.service';
+import { EmpleadosdepartamentoComponent } from './components/empleadosdepartamento/empleadosdepartamento.component';
+import { IncrementarsalarioempleadoComponent } from './components/incrementarsalarioempleado/incrementarsalarioempleado.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { EditardepartamentoComponent } from './components/editardepartamento/edi
     HomeComponent,
     InsertardepartamentoComponent,
     EditardepartamentoComponent,
+    EmpleadosdepartamentoComponent,
+    IncrementarsalarioempleadoComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import { EditardepartamentoComponent } from './components/editardepartamento/edi
   providers: [
     appRoutingProviders, // nota: importamos appRoutingProviders para rutas
     ServiceDepartamentos, // nota: importamos el servicio departamentos
+    ServiceEmpleados,
   ],
   bootstrap: [AppComponent],
 })

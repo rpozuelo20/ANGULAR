@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DepartamentosComponent } from './components/departamentos/departamentos.component';
 import { InsertardepartamentoComponent } from './components/insertardepartamento/insertardepartamento.component';
 import { EditardepartamentoComponent } from './components/editardepartamento/editardepartamento.component';
+import { EmpleadosdepartamentoComponent } from './components/empleadosdepartamento/empleadosdepartamento.component';
+import { IncrementarsalarioempleadoComponent } from './components/incrementarsalarioempleado/incrementarsalarioempleado.component';
 
 // Rutas
 const appRoutes: Routes = [
@@ -21,6 +23,14 @@ const appRoutes: Routes = [
   {
     path: 'editar/:numero/:nombre/:localidad',
     component: EditardepartamentoComponent,
+  },
+  {
+    path: 'empleados/:iddepartamento',
+    component: EmpleadosdepartamentoComponent,
+  },
+  {
+    path: 'incrementarsalario/:idempleado',
+    component: IncrementarsalarioempleadoComponent,
   },
 ];
 export const appRoutingProviders: any[] = [];
