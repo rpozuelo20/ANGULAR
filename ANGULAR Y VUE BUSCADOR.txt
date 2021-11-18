@@ -1,0 +1,7 @@
+Para lo del buscador, yo lo haria de la siguiente forma:
+1. En el component Menu tendria una caja de texto ViewChiId llamada cajajugador y un boton con un método para
+buscarJugadores()
+2. En el método buscarJugadores() capturo el contenido de la cajajugador
+3. Hago un this._router.navigate(['/buscadorjugadores', valor de la cajajugador']
+4. Creo una ruta al componente BuscadorJugadoresComponent en app.route.ts con un parametro
+5. Capturo el parametro en el componente BusadorJugadoresComponent y ya lo tendrias
